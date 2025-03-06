@@ -1,53 +1,50 @@
-# Predicting SpaceX Falcon 9 Landing Success
+# Predicting Falcon 9 Booster Landing Success
 
 ## Project Overview
-The goal of this project is to predict whether the Falcon 9 first stage will land successfully. SpaceX advertises Falcon 9 rocket launches on its website at a cost significantly lower than other providers. Much of this cost efficiency is due to SpaceX's ability to reuse the first stage of the rocket.
+The goal of this project is to predict whether the Falcon 9 rocket’s first stage (booster) will land successfully. Falcon 9 launches are offered at a significantly lower cost than other rockets, primarily due to the reusability of the booster.
 
-By predicting the likelihood of a successful first-stage landing, the cost of a launch by SpaceX can be estimated. This information could be valuable for alternative companies looking to bid competitively against SpaceX for rocket launches.
+By predicting the likelihood of a successful landing, the cost of a Falcon 9 launch can be estimated. This information could be valuable for companies looking to compete with Falcon 9 in the rocket launch market.
 
 ---
 
 ## Project Structure
 1. **Data Collection and Cleaning**  
-   - Collect data via the SpaceX API, filter it, and handle missing values.  
-   - Additional data is sourced from a SpaceX related web page using web scraping.  
+   - Retrieve launch data using the SpaceX API and supplement it with web-scraped data.
+   - Handle missing values and filter relevant information. 
 
 2. **Data Processing**  
-   - Create a binary column from a categorical one to be used as the target variable for model building.  
+   - Transform categorical data into a binary target variable for model building.
 
 3. **Exploratory Data Analysis (EDA)**  
-   - Analyse the dataset to extract key insights by querying the database using MySQL.  
-   - Visualise data through various plots to understand patterns and trends.  
+   - Analyse the dataset using SQL queries to extract key insights.
+   - Use visualisations to identify patterns and trends in landing success rates. 
 
 4. **Feature Engineering**  
-   - Refine the dataset by retaining only the necessary features.  
-   - Perform one-hot encoding on categorical columns and convert the data frame to a float format for compatibility with machine learning models.  
+   - Select and refine key features to enhance model performance.
+   - Apply one-hot encoding to categorical variables and ensure compatibility with machine learning models by converting data to float format.
 
 5. **Geospatial Analysis**  
-   - Map SpaceX launch site locations interactively using the Folium library.  
+   - Map and visualise rocket launch site locations interactively using Folium, highlighting success rates and spatial patterns affecting landing outcomes
 
 6. **Interactive Dashboard**  
-   - Build an interactive dashboard to visualise SpaceX data using Plotly Dash.  
+   - Develop a Plotly Dash dashboard with dynamic visualisations of launch and landing data.
 
 7. **Machine Learning Model Building and Evaluation**  
-   - Develop logistic regression, SVM, decision tree, and KNN models.  
-   - Evaluate and compare their performance to determine the most effective model.
+   - Build and evaluate multiple models using scikit-learn, including Logistic Regression, SVM, Decision Tree, and KNN.
+   - Optimise hyperparameters with GridSearchCV and compare model performance to determine the most effective approach.
   
 
 ---
 
-## Results
+## Results and Key Findings
 
-A high-level summary of the project's key findings:
-
-- The overall **landing success rate** has shown a consistent increase between 2010 and 2020, reflecting advancements in technology and operational efficiency.  
-- Variables such as **launch site**, **flight number**, **payload mass**, and **orbit** have all been found to influence the **landing success rate** to varying degrees.  
-- The **KSC LC-39A launch site** recorded the highest success rate among all launch sites.  
-- Among the models built, the **SVM model** achieved the highest accuracy in predicting SpaceX landing outcomes, correctly identifying:
-  - **100%** of unsuccessful landings.  
-  - **86%** of successful landings.
+- Landing success rates have increased consistently from 2010 to 2020, reflecting improvements in technology and operations.
+- Several factors influence landing success, including launch site, booster version, payload mass, and orbit type.
+- Among the tested models, the **SVM model** achieved the highest accuracy in predicting Falcon 9 booster landing outcomes, correctly identifying:
+  - 100% of unsuccessful landings.  
+  - 86% of successful landings.
 
 ---
 
-## Credit
-This project is based on the capstone project from the [IBM Data Science Professional Certificate](https://www.coursera.org/professional-certificates/ibm-data-science) course. Building on the original version, I restructured the project, refactored the code, added new features and documentation, and conducted an analysis of the results at each phase.
+## Attribution
+This project is based on [IBM Data Science Professional Certificate](https://www.coursera.org/professional-certificates/ibm-data-science)capstone project. Building on the original version, I restructured the project, refactored the code, added new features and documentation, and conducted a phase-by-phase analysis of the results.
